@@ -94,8 +94,8 @@ router.post("/", async (req, res) => {
   if (interactiveMsg?.type === "interactive") {
     const buttonId    = interactiveMsg.interactive?.button_reply?.id;
     const buttonTitle = interactiveMsg.interactive?.button_reply?.title;
-    // const from        = interactiveMsg.from;
-    const from = "917350062924";
+    const from        = interactiveMsg.from;
+    // const from = "917350062924";
     console.log(`🖱️  Button tapped: id="${buttonId}" title="${buttonTitle}" from=${from}`);
 
     switch (buttonId) {
@@ -174,8 +174,8 @@ router.post("/", async (req, res) => {
   // ── Handle regular text messages ──────────────────────────────────────────
   const textMsg = value?.messages?.[0];
   if (textMsg?.type === "text") {
-    // const from = textMsg.from;
-    const from = "917350062924";
+    const from = textMsg.from;
+    // const from = "917350062924";
     const text = textMsg.text?.body?.toLowerCase().trim();
 
     console.log(`💬 Text message from ${from}: "${text}"`);
